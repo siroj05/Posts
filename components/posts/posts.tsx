@@ -10,7 +10,7 @@ import Popup from "../popup/popup";
 
 export const Posts = () => {
   const [posts, setPosts] = useState<PostsResponse>();
-  const [error, setError] = useState<string | unknown>(null);
+  // const [error, setError] = useState<string | unknown>(null);
   const [isLoading, setLoading] = useState(true);
   const [skip, setSkip] = useState(0)
   const [isOpen, setOpen] = useState(false)
@@ -23,7 +23,7 @@ export const Posts = () => {
         const data = await getAllPostsApi(skip);
         setPosts(data);
       } catch {
-        setError(error);
+        // setError(error);
       } finally {
         setLoading(false);
       }
@@ -44,12 +44,7 @@ export const Posts = () => {
     setOpen(true)
   }
 
-  if (error) {
-    <div className="p-10 mx-auto text-center text-red-600">
-      Error Load Data
-    </div>;
-  } else {
-    return (
+   return (
       <>
         <div className={`relative ${isOpen ? 'overflow-hidden' : ''}`}>
           <div>
@@ -105,5 +100,4 @@ export const Posts = () => {
         </div>
       </>
     );
-  }
 };

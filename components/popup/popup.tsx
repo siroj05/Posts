@@ -71,7 +71,7 @@ export default function Popup(
                   <span className="my-auto text-sm font-semibold">Tags:</span>
                   {
                     details?.tags.map((d: any, i: number) => (
-                      <div className="text-sm p-1 bg-gray-200 rounded-md border-black">
+                      <div key={i} className="text-sm p-1 bg-gray-200 rounded-md border-black">
                         {d}
                       </div>
                     ))

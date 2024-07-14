@@ -15,12 +15,12 @@ export default function DetailPost({ params }: { params: { id: string } }) {
   const handleClick = () => {
     setLimit(limit + 10)
   }
-
+  const id = params.id[0];
   useEffect(() => {
     async function getSinglePost() {
       setLoading(true);
       try {
-        const data = await getDetailApi(params.id[0]);
+        const data = await getDetailApi(id);
         setPost(data);
       } catch {
         console.log('404')
@@ -95,8 +95,8 @@ export default function DetailPost({ params }: { params: { id: string } }) {
                 </div>
                 {commentLoading ?
                     <div className="h-72  my-2 overflow-auto border-y">
-                      {comments?.map(() =>(
-                          <div className="h-20 bg-gray-200 my-1 ">
+                      {comments?.map((e:any, i:any) =>(
+                          <div key={i} className="h-20 bg-gray-200 my-1 ">
 
                           </div>
                       ))}
