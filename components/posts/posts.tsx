@@ -57,8 +57,15 @@ export const Posts = () => {
                 {posts?.posts.map((data: any, i: number) => (
                   <div key={i} className="w-full bg-gray-100 2xl:p-6 xl:p-6 p-2  rounded my-2">
                     <div className="xl:text-2xl font-semibold">
-                      <Link href={`/post/${data.id}/detail`}>
+                      <Link href={`/post/${data.id}/detail`} className="flex">
                         {data.title}
+                        <Image
+                          className="my-auto mx-1"
+                          src="/external-link.svg"
+                          alt="external-link Logo"
+                          width={16}
+                          height={16}
+                        />
                       </Link>
                     </div>
                     <div className="xl:text-lg text-sm text-gray-600 my-4">{data.body}</div>
