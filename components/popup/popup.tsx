@@ -102,11 +102,15 @@ export default function Popup(
                     {details?.views}
                   </div>
                 </div>
+                <div className="font-semibold">
+                  Comments
+                </div>
                 {commentLoading ?
                   <div className="h-72 bg-gray-200">
-
+                    Comments
                   </div>
                   :
+                  comments.length > 0 ? 
                   <div className="h-72 border-y overflow-auto">
                     {
                       comments?.map((d: any, i: any) => {
@@ -137,6 +141,13 @@ export default function Popup(
                       })
                     }
                   </div>
+                  : <>
+                    <div className="text-center text-gray-400 h-72 border-y">
+                      <div className="mt-3">
+                        No comments yet
+                      </div>
+                    </div>
+                  </>
                 }
               </>
           }

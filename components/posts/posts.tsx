@@ -52,7 +52,7 @@ export const Posts = () => {
     return (
       <>
         <div className={`relative ${isOpen ? 'overflow-hidden' : ''}`}>
-          <div className="p-10">
+          <div>
             { isLoading ? 
               <div className="mx-auto text-center">Loading...</div>:
               <>
@@ -60,9 +60,13 @@ export const Posts = () => {
                   <div className="inline-block bg-black dark:white p-2 rounded text-white">{`Show ${posts?.limit} to ${posts?.total} Posts`}</div>
                 </div>
                 {posts?.posts.map((data: any, i: number) => (
-                  <div key={i} className="w-full bg-gray-100 p-3 rounded my-2">
-                    <div className="text-xl font-semibold">{data.title}</div>
-                    <div className="text-sm text-gray-600">{data.body}</div>
+                  <div key={i} className="w-full bg-gray-100 xl:p-6 p-3 rounded my-2">
+                    <div className="xl:text-2xl font-semibold">
+                      <Link href={`/post/${data.id}/detail`}>
+                        {data.title}
+                      </Link>
+                    </div>
+                    <div className="xl:text-lg text-sm text-gray-600 my-4">{data.body}</div>
                     <div className="my-2 flex gap-2">
                       <div className="flex">
                         <Image
