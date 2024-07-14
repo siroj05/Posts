@@ -135,7 +135,7 @@ export default function DetailPost({ params }: { params: { id: string } }) {
                     {
                       limit !== comments.total && 
                         <div className="flex justify-center">
-                          <button className="font-thin border bg-white p-2 w-36 rounded-md my-2" onClick={handleClick}>
+                          <button className="font-thin border bg-white p-2 w-36 rounded-3xl my-2" onClick={handleClick}>
                             Load more
                           </button>
                         </div>

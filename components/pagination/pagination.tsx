@@ -47,7 +47,7 @@ export const Pagination = ({ limit, skip, total, page, setPage }: Props) => {
             onClick={() => handleClick(currentPage - 1)}
             className="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-black bg-white border border-e-0 border-gray-700 rounded-s hover:bg-black hover:text-black dark:hover:bg-black dark:hover:text-white"
           >
-            Previous
+            {`<<`}
           </a>
         </li>
         {pageNumbers.map((number, index) => (
@@ -75,7 +75,7 @@ export const Pagination = ({ limit, skip, total, page, setPage }: Props) => {
             onClick={() => handleClick(currentPage + 1)}
             className="flex items-center justify-center px-3 h-8 leading-tight text-black bg-white border border-gray-700 rounded-e hover:bg-black hover:text-black dark:hover:bg-black dark:hover:text-white"
           >
-            Next
+            {`>>`}
           </a>
         </li>
       </ul>

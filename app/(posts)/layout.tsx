@@ -10,7 +10,7 @@ export default function Layout({ children }: Props) {
   return(
     <div className="flex flex-col h-screen">
       <NavigationBar />
-      <div className="p-10">
+      <div className="2xl:p-10 xl:p-10 lg:p-10 md:p-10 w-full">
         {children}
       </div>
       <Footer />

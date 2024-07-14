@@ -48,10 +48,10 @@ export default function Popup(
   return (
     <>
       <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none bg-opacity-50 backdrop-filter backdrop-brightness-75 backdrop-blur-md">
-        <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-9/12 bg-white outline-none focus:outline-none p-10 backdrop-blur-sm">
+        <div className="border-0 rounded-lg shadow-lg relative flex flex-col xl:w-9/12 bg-white outline-none focus:outline-none 2xl:p-10 xl:p-10 lg:p-10 md:p-5 sm:p-5 p-2  backdrop-blur-sm">
           <button
             onClick={() => setOpen(false)}
-            className="absolute top-0 right-0 -mt-2 -mr-2 text-white bg-black rounded-full w-10 h-10 flex items-center justify-center">
+            className="absolute top-0 right-0 xl:-mt-2 xl:-mr-2 text-white xl:bg-black lg:text-black xl:text-white max-[1024px]:text-black rounded-full w-10 h-10 flex items-center justify-center">
             x
           </button>
           {
@@ -64,7 +64,7 @@ export default function Popup(
               </>
               :
               <>
-                <div className="text-xl font-bold">
+                <div className="xl:text-2xl font-bold">
                   {details?.title}
                 </div>
                 <div className="flex gap-1 my-2">
@@ -77,7 +77,7 @@ export default function Popup(
                     ))
                   }
                 </div>
-                <div className="text-sm">
+                <div className="xl:text-xl md:text-md text-sm">
                   {details?.body}
                 </div>
                 <div className="flex my-2 gap-2">
@@ -111,16 +111,16 @@ export default function Popup(
                   </div>
                   :
                   comments.length > 0 ? 
-                  <div className="h-72 border-y overflow-auto">
+                  <div className="xl:h-72 border-y overflow-auto">
                     {
                       comments?.map((d: any, i: any) => {
                         return (
                           <>
                             <div key={i} className="bg-gray-100 my-1 rounded p-1">
-                              <div className="font-semibold">
+                              <div className="xl:text-xl text-sm font-semibold">
                                 {d?.user?.username ?? ''}
                               </div>
-                              <div className="text-sm">
+                              <div className="xl:text-xl md:text-md text-sm">
                                 {d?.body ?? ''}
                               </div>
                               <span className="text-sm my-2">

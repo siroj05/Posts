@@ -51,11 +51,11 @@ export const Posts = () => {
             { isLoading ? 
               <div className="mx-auto text-center">Loading...</div>:
               <>
-                <div className="w-full">
-                  <div className="inline-block bg-black dark:white p-2 rounded text-white">{`Show ${posts?.limit} to ${posts?.total} Posts`}</div>
+                <div className="w-full 2xl:p-0 xl:p-0 lg:p-0 md:p-0 p-2">
+                  <div className="inline-block bg-black dark:white p-2 rounded text-white 2xl:text-xl xl:text-xl lg:text-xl md:text-md text-sm">{`Show ${posts?.limit} to ${posts?.total} Posts`}</div>
                 </div>
                 {posts?.posts.map((data: any, i: number) => (
-                  <div key={i} className="w-full bg-gray-100 xl:p-6 p-3 rounded my-2">
+                  <div key={i} className="w-full bg-gray-100 2xl:p-6 xl:p-6 p-2  rounded my-2">
                     <div className="xl:text-2xl font-semibold">
                       <Link href={`/post/${data.id}/detail`}>
                         {data.title}
@@ -83,7 +83,7 @@ export const Posts = () => {
                 ))}
               </>
             }
-            <div className="flex justify-end">
+            <div className="flex justify-center my-2">
               {posts && <Pagination
                 skip={posts!.skip}
                 limit={posts!.limit}
